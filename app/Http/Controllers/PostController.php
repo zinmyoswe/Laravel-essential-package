@@ -66,8 +66,10 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    { 
+
+        $posts = DB::select('select * from posts where id=?', [$id]);
+        return view('edit',['posts' => $posts]);
     }
 
     /**
@@ -79,7 +81,16 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $name = $request ->get('name');
+        $detail = $request ->get('detail');
+        $author = $request ->get('author');
+        $posts = DB::update('update posts set name=?, detail=?, author=? where id=?',[$name,$detail,$author,$id]);
+        if($posts){
+            $red = redirect('posts')->with('success','Data has been Updated');
+        }else{
+            $red = redirect('posts/edit/'.$id)->with('danger','Error Update, please try again');
+        }
+        return $red;
     }
 
     /**
@@ -90,6 +101,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $posts = DB::delete('delete from posts where id=?', [$id]);
+        $red = redirect('posts');
+        return $red;
     }
 }
