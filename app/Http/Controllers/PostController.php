@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = DB::select("select * from posts");
+        $posts = DB::table('posts')->orderBy('id','DESC')->paginate(3);
         return view('index',['posts' => $posts]);
     }
 
@@ -56,7 +57,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts = DB::select('select * from posts where id=?',[$id]);
+        return view('show',['posts' => $posts]);
     }
 
     /**
@@ -104,5 +106,19 @@ class PostController extends Controller
         $posts = DB::delete('delete from posts where id=?', [$id]);
         $red = redirect('posts');
         return $red;
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $posts = DB::table('posts')->where('name','like','%'.$search.'%')->paginate(5);
+        return view('index',['posts'=>$posts]);
+    }
+
+      public function deleteAll(Request $request)
+    {
+        $ids = $request->get('ids');
+        $dbs = DB::delete('delete from posts where id in ('.implode(",",$ids).')');
+        return redirect('posts');
     }
 }
