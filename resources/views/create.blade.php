@@ -1,12 +1,16 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 <div class="row">
 	<div class="col-md-6 offset-md-3">
-		@if($message = Session::get('danger'))
+		@if($errors->any())
 			<div class="alert alert-danger">
-				<strong>{{$message}}</strong>
+				<ul>
+					@foreach($errors->all() as $error)
+						<li>{{$error}}</li>
+					@endforeach
+				</ul>
 			</div>
 		@endif
 		<form action="{{ action('PostController@store')}}" method="post">
@@ -29,5 +33,5 @@
 		</form>
 	</div>
 </div>
-
+</div>{{-- container end --}}
 @endsection

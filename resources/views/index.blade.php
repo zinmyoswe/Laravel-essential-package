@@ -1,13 +1,14 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
+<div class="container">
 @if($message = Session::get('success'))
 	<div class="alert alert-success">
 		<p>{{$message}}</p>
 	</div>
 @endif
-<br><br>
+
 
 <div class="row">
 	<div class="col-lg-6"><h1>Laravel CRUD</h1></div>
@@ -60,6 +61,7 @@
 		{{$posts->links()}}
 	</div>
 </div>
+</div>{{-- container end --}}
 <script type="text/javascript">
 	$('.selectall').click(function(){
 		$('.selectbox').prop('checked', $(this).prop('checked'));

@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/search', 'PostController@search');
 Route::delete('/deleteall','PostController@deleteAll');
+Route::get('/post', 'PostController@index')->name('post');
 Route::resource('posts','PostController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
