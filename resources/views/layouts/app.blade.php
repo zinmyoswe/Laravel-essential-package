@@ -27,6 +27,10 @@
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+    
+    
 </head>
 <body>
     <div id="app">
@@ -40,14 +44,16 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav mr-auto">
                     @guest
-
+                        <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
                     @else
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                  
                         <li><a href="{{ route('post')}}" class="nav-link">CRUD</a></li>
-                    </ul>
+                         <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
                     @endguest
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
