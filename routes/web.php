@@ -17,6 +17,7 @@ Route::delete('/deleteall','PostController@deleteAll');
 Route::get('/post', 'PostController@index')->name('post');
 Route::resource('posts','PostController');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');;
