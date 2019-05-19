@@ -24,6 +24,7 @@
    
     <link rel="icon" href="{!! asset('img/ACTIVE.png') !!}"/>
     <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}

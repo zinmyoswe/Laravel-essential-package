@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function(){
+    return view('product');
+});
 Route::get('/search', 'PostController@search');
 Route::delete('/deleteall','PostController@deleteAll');
 Route::get('/post', 'PostController@index')->name('post');
@@ -29,4 +31,6 @@ Route::delete('/file/{id}','FileController@destroy')->name('deletefile');
 Route::get('/file/download/{id}', 'FileController@show')->name('downloadfile');
 Route::get('/file/email/{id}', 'FileController@edit')->name('emailfile');
 Route::post('/file/dropzone', 'FileController@dropzone')->name('dropzone');
+Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook')->name('fblogin');
+Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallback')->name('fbcallback');
 

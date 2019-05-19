@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <p>
+                        <a href="{{route('fblogin')}}" class="btn btn-primary"><i class="fa fa-facebook"></i> Login with Facebook</a>
+                    </p>
                 </div>
             </div>
         </div>
