@@ -18,6 +18,7 @@
                          <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
                          <li><a href="{{ route('viewload')}}" class="nav-link">LoadMore</a></li>
                          <li><a href="{{ route('autocomplete')}}" class="nav-link">Autocomplete</a></li>
+                         <li><a href="{{ route('dynamic')}}" class="nav-link">DynamicDependent</a></li>
                     @endguest
 
     </ul>
