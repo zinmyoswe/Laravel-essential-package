@@ -34,3 +34,7 @@ Route::post('/file/dropzone', 'FileController@dropzone')->name('dropzone');
 Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook')->name('fblogin');
 Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallback')->name('fbcallback');
 
+
+// Load More
+Route::get('/loadmore', 'LoadMoreController@index')->name('viewload');
+Route::post('/loadmore/load_data', 'LoadMoreController@load_data')->name('loadmore.load_data');

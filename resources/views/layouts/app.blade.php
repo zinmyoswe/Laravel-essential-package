@@ -53,6 +53,7 @@
                   
                         <li><a href="{{ route('post')}}" class="nav-link">CRUD</a></li>
                          <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
+                         <li><a href="{{ route('viewload')}}" class="nav-link">LoadMore</a></li>
                     @endguest
                     </ul>
                     <!-- Right Side Of Navbar -->

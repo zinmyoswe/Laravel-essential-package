@@ -4,7 +4,9 @@
 <div id="app">
 <div class="container">
     product page
-    <router-view></router-view>
+    <br><br>
+    sdfa
+   <example-component></example-component>
 
 </div>
 
