@@ -44,6 +44,9 @@ Route::get('/autocomplete', 'AutocompleteController@index')->name('autocomplete'
 Route::post('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
 
 // Dynamic
-Route::get('/dynamic_dependent', 'DynamicDependent@index')->name('dynamic');;
-
+Route::get('/dynamic_dependent', 'DynamicDependent@index')->name('dynamic');
 Route::post('dynamic_dependent/fetch', 'DynamicDependent@fetch')->name('dynamicdependent.fetch');
+
+//LiveSearch
+Route::get('/live_search', 'LiveSearch@index')->name('livesearch');
+Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
