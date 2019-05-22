@@ -31,7 +31,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
     
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -50,10 +50,11 @@
                         <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
                     @else
                     <!-- Left Side Of Navbar -->
-                  
+             
                         <li><a href="{{ route('post')}}" class="nav-link">CRUD</a></li>
                          <li><a href="{{ route('viewfile')}}" class="nav-link">File</a></li>
                          <li><a href="{{ route('viewload')}}" class="nav-link">LoadMore</a></li>
+                         <li><a href="{{ route('autocomplete')}}" class="nav-link">Autocomplete</a></li>
                     @endguest
                     </ul>
                     <!-- Right Side Of Navbar -->

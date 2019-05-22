@@ -38,3 +38,7 @@ Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallb
 // Load More
 Route::get('/loadmore', 'LoadMoreController@index')->name('viewload');
 Route::post('/loadmore/load_data', 'LoadMoreController@load_data')->name('loadmore.load_data');
+
+// Auto Complete
+Route::get('/autocomplete', 'AutocompleteController@index')->name('autocomplete');
+Route::post('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
